@@ -411,6 +411,7 @@ body {
     width: 310px;
     border: 1px solid #BBBBBB;
     border-radius: 2px;
+    text-indent: 5px;
 }
 
 .alignInputsPopup input:nth-of-type(1){
@@ -424,6 +425,11 @@ body {
     margin-top: 10px;
 }
 .alignInputsPopup input:nth-of-type(3){
+    height: 40px;
+    width: 310px;
+    margin-top: 10px;
+}
+.alignInputsPopup input:nth-of-type(4){
     height: 40px;
     width: 310px;
     margin-top: 10px;
@@ -444,12 +450,99 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #FFFFFF;
-    margin-top: 130px;
+    margin-top: 90px;
     border: none;
     border-radius: 2px;
 }
 
 #popupX {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #DB3938;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*popupVet*/
+.popupsNewVet {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup2 {
+  background-color: #FFFFFF;
+  width: 350px;
+  height: 430px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.alignInputsPopup input{
+    height: 40px;
+    width: 310px;
+    border: 1px solid #BBBBBB;
+    border-radius: 2px;
+    text-indent: 5px;
+}
+
+.alignInputsPopup input:nth-of-type(1){
+    height: 40px;
+    width: 310px;
+    margin-top: 40px;
+}
+.alignInputsPopup input:nth-of-type(2){
+    height: 40px;
+    width: 310px;
+    margin-top: 10px;
+}
+.alignInputsPopup input:nth-of-type(3){
+    height: 40px;
+    width: 310px;
+    margin-top: 10px;
+}
+.alignInputsPopup input:nth-of-type(4){
+    height: 40px;
+    width: 310px;
+    margin-top: 10px;
+}
+.alignInputsPopup input:nth-of-type(5){
+    height: 40px;
+    width: 310px;
+    margin-top: 10px;
+}
+
+.popup2 form p{
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    color: #869DC5;
+}
+
+.popup2 form button{
+    width: 310px;
+    height: 35px;
+    background-color: #3A8AD3;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-top: 50px;
+    border: none;
+    border-radius: 2px;
+}
+
+#popupX2 {
   position: absolute;
   top: 10px;
   right: 15px;
