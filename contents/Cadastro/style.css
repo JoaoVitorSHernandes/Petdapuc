@@ -17,7 +17,7 @@ body {
 }
 
 .centerBox {
-    min-height: 400px;
+    min-height: 470px;
     width: 350px;
     background-color: rgba(255, 255, 255, 0.33);
     border-radius: 10px;
@@ -57,8 +57,16 @@ body {
 .alignInputsText input:nth-of-type(1) {
     text-indent: 10px;
 }
-
 .alignInputsText input:nth-of-type(2) {
+    text-indent: 10px;
+}
+.alignInputsText input:nth-of-type(3) {
+    text-indent: 10px;
+}
+.alignInputsText input:nth-of-type(4) {
+    text-indent: 10px;
+}
+.alignInputsText input:nth-of-type(5) {
     text-indent: 10px;
 }
 
@@ -116,7 +124,7 @@ body {
     width: 310px;
     height: 35px;
     border-radius: 2px;
-    margin-top: 104px;
+    margin-top: 80px;
 }
 
 .alignEntrarButton {
