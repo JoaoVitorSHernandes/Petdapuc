@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Cliente</title>
+</head>
+
+<body>
+    <section class="marginInAllElements">
+        <p>Cliente</p>
+        <div class="alignSairEditar">
+            <a href="">Sair</a>
+            <a href="">Editar dados</a>
+        </div>
+
+        <div class="vetList">
+            <div class="alignInsideVetList">
+                <p>Veterinários</p>
+
+                <div class="borderNameVets">
+                    <p>Nome da pet 1</p>
+                    <div>
+                        <a href="">Excluir</a>
+                        <a href="">Editar</a>
+                    </div>
+                </div>
+                <div class="borderNameVets">
+                    <p>Nome do pet 2</p>
+                    <div>
+                        <a href="">Excluir</a>
+                        <a href="">Editar</a>
+                    </div>
+                </div>
+                <div class="borderNameVets">
+                    <p>Nome do pet 3</p>
+                    <div>
+                        <a href="">Excluir</a>
+                        <a href="">Editar</a>
+                    </div>
+                </div>
+                <div class="addVetButton">
+                    <a href="#" onclick="abrirPopupNewVet(); return false;">Adicionar novo pet</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="servicesBox">
+            <div class="wordAndButton">
+                <p>Agendar serviços</p>
+                <a href="#" onclick="abrirPopup(); return false;">Criar Serviço</a>
+            </div>
+
+            <div class="overflowBoxes">
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Box" style="margin-left: 15px;">
+                    <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="alignServiceNameAndExcluirEditar">
+                        <p>Nome do serviço</p>
+                        <div class="excluirAndEditar">
+                            <a href="">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="secondServicesBox" style="max-width: 1185px; max-height: 115px;">
+            <div class="wordAndButton">
+                <p>Serviços agendados</p>
+            </div>
+
+            <div class="horizontalAlignStraightBoxes">
+                <div class="alignStraightBoxes">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt=""
+                            class="img-agendamento">
+                        <span class="cancel-msg"
+                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px;">cancelar</span>
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt=""
+                            class="img-agendamento">
+                        <span class="cancel-msg"
+                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px;">cancelar</span>
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt=""
+                            class="img-agendamento">
+                        <span class="cancel-msg"
+                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px;">cancelar</span>
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="secondServicesBox">
+            <div class="wordAndButton">
+                <p>Histórico de serviços</p>
+            </div>
+
+            <div class="horizontalAlignStraightBoxes">
+                <div class="alignStraightBoxes">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox">
+                        <img src="../../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Nome do serviço</p>
+                                <p>Nome do veterinário</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Nome do pet</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="popupContainer" class="popups">
+            <div class="popup1">
+                <span id="popupX" onclick="fecharPopup()">X</span>
+                <form>
+                    <p>Criar serviço</p>
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Descrição">
+                        <input type="text" placeholder="Duração">
+                        <input type="text" placeholder="Preço">
+                    </div>
+                    <button type="submit">Criar serviço</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="popupContainerNewVet" class="popupsNewVet">
+            <div class="popup2">
+                <span id="popupX2" onclick="fecharPopupNewVet()">X</span>
+                <form>
+                    <p>Criar serviço</p>
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Data de nascimento">
+                        <input type="text" placeholder="CPF">
+                        <input type="text" placeholder="Telefone">
+                        <input type="text" placeholder="Senha">
+                    </div>
+                    <button type="submit">Criar serviço</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function abrirPopup() {
+                const container = document.getElementById("popupContainer");
+                container.style.display = "flex";
+            }
+
+            function fecharPopup() {
+                const container = document.getElementById("popupContainer");
+                container.style.display = "none";
+            }
+
+            function fecharSeClicarFora(event) {
+                if (event.target.id === "popupContainer") {
+                    fecharPopup();
+                }
+            }
+
+            document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarFora);
+
+
+            function abrirPopupNewVet() {
+                const container = document.getElementById("popupContainerNewVet");
+                container.style.display = "flex";
+            }
+
+            function fecharPopupNewVet() {
+                const container = document.getElementById("popupContainerNewVet");
+                container.style.display = "none";
+            }
+
+            function fecharSeClicarForaNewVet(event) {
+                if (event.target.id === "popupContainerNewVet") {
+                    fecharPopup();
+                }
+            }
+
+            document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarForaNewVet);
+
+
+            const boxes = document.querySelectorAll('.straightBox');
+
+            boxes.forEach(box => {
+                const msg = box.querySelector('.cancel-msg');
+
+                box.style.position = 'relative'; // Garante posicionamento
+
+                box.addEventListener('mouseenter', () => {
+                    msg.style.display = 'block';
+                });
+
+                box.addEventListener('mouseleave', () => {
+                    msg.style.display = 'none';
+                });
+            });
+
+        </script>
+    </section>
+</body>
+
+</html>
