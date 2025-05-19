@@ -337,6 +337,7 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .straightBox img {
@@ -562,6 +563,7 @@ body {
 
 /*Vet*/
 .finalServiceName {
+    display: none;
     width: 350px;
     height: 230px;
     background-color: #FFFFFF;
