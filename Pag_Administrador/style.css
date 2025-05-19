@@ -303,6 +303,7 @@ body {
 .secondServicesBox {
     margin-top: 35px;
     width: 100%;
+    min-width: 423px;
     min-height: 235px;
     background-color: #FFFFFF54;
     border-radius: 20px;
