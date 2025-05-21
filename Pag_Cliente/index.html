@@ -65,7 +65,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Agendar</a>
+                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -465,6 +465,20 @@
             </div>
         </div>
 
+        <div id="popupContainerAgendarService" class="popupsAgendarService">
+            <div class="popup3">
+                <span id="popupX3" onclick="fecharPopupAgendarService()">X</span>
+                <form>
+                    <p>Novo pet</p>
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Data">
+                        <input type="text" placeholder="veterinário">
+                    </div>
+                    <button type="submit">Agendar pet</button>
+                </form>
+            </div>
+        </div>
+
         <script>
             function abrirPopup() {
                 const container = document.getElementById("popupContainer");
@@ -499,6 +513,16 @@
                 if (event.target.id === "popupContainerNewVet") {
                     fecharPopup();
                 }
+            }
+
+            function abrirPopupAgendarService() {
+                const container = document.getElementById("popupContainerAgendarService");
+                container.style.display = "flex";
+            }
+
+            function fecharPopupabrirPopupAgendarService() {
+                const container = document.getElementById("popupContainerAgendarService");
+                container.style.display = "none";
             }
 
             document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarForaNewVet);
