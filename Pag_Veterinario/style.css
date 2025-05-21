@@ -563,6 +563,34 @@ body {
 
 
 /*Vet*/
+.straightBox {
+    position: relative;
+}
+
+.statusServico {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.status-azul {
+    background-color: #3A8AD3;
+}
+
+.status-vermelho {
+    background-color: #D33A3A;
+}
+
+
+
 .finalServiceName {
     display: none;
     width: 350px;

@@ -17,33 +17,33 @@
     <section class="marginInAllElements">
         <p>Administrador</p>
         <div class="alignSairEditar">
-            <a href="">Sair</a>
-            <a href="">Editar dados</a>
+            <a href="../Login/index.html">Sair</a>
+            <a href="../Editar/index.html">Editar dados</a>
         </div>
 
         <div class="vetList">
             <div class="alignInsideVetList">
                 <p>Veterinários</p>
 
-                <div class="borderNameVets">
+                <div class="borderNameVets" id="vet-1">
                     <p>Nome da pessoa 1</p>
                     <div>
-                        <a href="">Excluir</a>
-                        <a href="">Editar</a>
+                        <a href="" class="excluir">Excluir</a>
+                        <a href="" onclick="abrirPopupEditVet(); return false;">Editar</a>
                     </div>
                 </div>
-                <div class="borderNameVets">
+                <div class="borderNameVets" id="vet-1">
                     <p>Nome da pessoa 2</p>
                     <div>
-                        <a href="">Excluir</a>
-                        <a href="">Editar</a>
+                        <a href="" class="excluir">Excluir</a>
+                        <a href="" onclick="abrirPopupEditVet(); return false;">Editar</a>
                     </div>
                 </div>
-                <div class="borderNameVets">
+                <div class="borderNameVets" id="vet-1">
                     <p>Nome da pessoa 3</p>
                     <div>
-                        <a href="">Excluir</a>
-                        <a href="">Editar</a>
+                        <a href="" class="excluir">Excluir</a>
+                        <a href="" onclick="abrirPopupEditVet(); return false;">Editar</a>
                     </div>
                 </div>
                 <div class="addVetButton">
@@ -60,63 +60,63 @@
             </div>
 
             <div class="overflowBoxes">
-                <div class="Box">
+                <div class="Box" id="servico-1">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
+                <div class="Box" id="servico-1" style="margin-left: 15px;">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
+                <div class="Box" id="servico-1" style="margin-left: 15px;">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
+                <div class="Box" id="servico-1" style="margin-left: 15px;">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
+                <div class="Box" id="servico-1" style="margin-left: 15px;">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
+                <div class="Box" id="servico-1" style="margin-left: 15px;">
                     <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
                     <div class="alignServiceNameAndExcluirEditar">
                         <p>Nome do serviço</p>
                         <div class="excluirAndEditar">
-                            <a href="">Excluir</a>
-                            <a href="">Editar</a>
+                            <a href="" class="excluir">Excluir</a>
+                            <a href="" onclick="abrirPopupEditService(); return false;">Editar</a>
                         </div>
                     </div>
                 </div>
@@ -582,6 +582,36 @@
                 </form>
             </div>
         </div>
+        <div id="popupContainerEditVet" class="popupsEditVet">
+            <div class="popup3">
+                <span id="popupX3" onclick="fecharPopupEditVet()">X</span>
+                <form>
+                    <p>Editar veterinário</p>
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Data de nascimento">
+                        <input type="text" placeholder="CPF">
+                        <input type="text" placeholder="Telefone">
+                    </div>
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+        <div id="popupContainerEditService" class="popupsEditService">
+            <div class="popup4">
+                <span id="popupX4" onclick="fecharPopupEditService()">X</span>
+                <form>
+                    <p>Editar serviço</p>
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Descrição">
+                        <input type="text" placeholder="Duração">
+                        <input type="text" placeholder="Preço">
+                    </div>
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
 
         <script>
             function abrirPopup() {
@@ -618,9 +648,47 @@
                     fecharPopup();
                 }
             }
+            function abrirPopupEditVet() {
+                const container = document.getElementById("popupContainerEditVet");
+                container.style.display = "flex";
+            }
 
-            // 👉 Aqui você adiciona o event listener
+            function fecharPopupEditVet() {
+                const container = document.getElementById("popupContainerEditVet");
+                container.style.display = "none";
+            }
+            function abrirPopupEditService() {
+                const container = document.getElementById("popupContainerEditService");
+                container.style.display = "flex";
+            }
+
+            function fecharPopupEditService() {
+                const container = document.getElementById("popupContainerEditService");
+                container.style.display = "none";
+            }
+
+
             document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarForaNewVet);
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll('a.excluir').forEach(function (botao) {
+                    botao.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+
+                        const elementoPai = botao.closest(".Box") || botao.closest(".borderNameVets");
+
+                        if (elementoPai && elementoPai.id) {
+                            console.log("ID do item a ser excluído:", elementoPai.id);
+                            elementoPai.remove();
+                            alert("Apagado com sucesso!");
+                        }
+                    });
+                });
+            });
+
+
         </script>
     </section>
 </body>

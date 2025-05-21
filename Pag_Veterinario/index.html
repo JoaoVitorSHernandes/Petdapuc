@@ -17,8 +17,8 @@
     <section class="marginInAllElements">
         <p>Veterinário</p>
         <div class="alignSairEditar">
-            <a href="">Sair</a>
-            <a href="">Editar dados</a>
+            <a href="../Login/index.html">Sair</a>
+            <a href="../Editar/index.html">Editar dados</a>
         </div>
 
 
@@ -552,6 +552,52 @@
                     box.addEventListener("click", () => {
                         finalServiceName.style.display = "block";
                     });
+                });
+            });
+
+            let boxSelecionado = null;
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const straightBoxes = document.querySelectorAll(".straightBox");
+                const finalServiceName = document.querySelector(".finalServiceName");
+                const form = document.querySelector(".customizeFinalInputs");
+
+                straightBoxes.forEach(box => {
+                    box.addEventListener("click", () => {
+                        boxSelecionado = box;
+                        finalServiceName.style.display = "block";
+                    });
+                });
+
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const selectedStatus = form.querySelector('input[name="samething"]:checked');
+
+                    if (selectedStatus && boxSelecionado) {
+                        const statusText = selectedStatus.nextSibling.textContent.trim();
+
+                        const statusAntigo = boxSelecionado.querySelector(".statusServico");
+                        if (statusAntigo) {
+                            statusAntigo.remove();
+                        }
+
+                        const statusSpan = document.createElement("span");
+                        statusSpan.textContent = statusText;
+                        statusSpan.classList.add("statusServico");
+
+                        if (statusText === "Cancelado" || statusText === "Não compareceu") {
+                            statusSpan.classList.add("status-vermelho");
+                        } else if (statusText === "Realizado") {
+                            statusSpan.classList.add("status-azul");
+                        }
+
+                        boxSelecionado.appendChild(statusSpan);
+                        finalServiceName.style.display = "none";
+                        boxSelecionado = null;
+                    } else {
+                        alert("Por favor, selecione um status antes de salvar.");
+                    }
                 });
             });
         </script>
