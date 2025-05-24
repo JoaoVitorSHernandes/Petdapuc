@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <section class="marginInAllElements">
+    <section class="marginInAllElements" id="mainClientSection">
         <p>Cliente</p>
         <div class="alignSairEditar">
             <a href="../Login/index.html">Sair</a>
@@ -23,110 +23,128 @@
 
         <div class="vetList">
             <div class="alignInsideVetList">
-                <p>Veterinários</p>
+                <p>Pets</p>
 
-                <div class="borderNameVets" id="vet-1">
-                    <p>Nome da pet 1</p>
+                <div class="borderNameVets" id="pet-1" data-especie="Cachorro" data-raca="Labrador"
+                    data-nascimento="01/01/2020" data-saude="Todas as vacinas em dia">
+                    <p>Rex</p>
                     <div>
-                        <a href="" class="excluir">Excluir</a>
-                        <a href="" onclick="abrirPopup(); return false;">Editar</a>
+                        <a href="#" class="excluir-pet">Excluir</a>
+                        <a href="#" class="editar-pet">Editar</a>
                     </div>
                 </div>
-                <div class="borderNameVets" id="vet-1">
-                    <p>Nome do pet 2</p>
+                <div class="borderNameVets" id="pet-2" data-especie="Gato" data-raca="Siamês"
+                    data-nascimento="15/03/2021" data-saude="Castrado, saudável">
+                    <p>Mimi</p>
                     <div>
-                        <a href="" class="excluir">Excluir</a>
-                        <a href="" onclick="abrirPopup(); return false;">Editar</a>
+                        <a href="#" class="excluir-pet">Excluir</a>
+                        <a href="#" class="editar-pet">Editar</a>
                     </div>
                 </div>
-                <div class="borderNameVets" id="vet-1">
-                    <p>Nome do pet 3</p>
+                <div class="borderNameVets" id="pet-3" data-especie="Pássaro" data-raca="Canário"
+                    data-nascimento="10/07/2022" data-saude="Canta muito">
+                    <p>PiuPiu</p>
                     <div>
-                        <a href="" class="excluir">Excluir</a>
-                        <a href="" onclick="abrirPopup(); return false;">Editar</a>
+                        <a href="#" class="excluir-pet">Excluir</a>
+                        <a href="#" class="editar-pet">Editar</a>
                     </div>
                 </div>
+
                 <div class="addVetButton">
-                    <a href="#" onclick="abrirPopupNewVet(); return false;">Adicionar novo pet</a>
+                    <a href="#" id="addNewPetButton">Adicionar novo pet</a>
                 </div>
-
             </div>
         </div>
 
         <div class="servicesBox">
             <div class="wordAndButton">
                 <p>Agendar serviços</p>
-
             </div>
-
             <div class="overflowBoxes">
-                <div class="Box">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" id="service-item-a">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Consulta de Rotina</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" style="margin-left: 15px;" id="service-item-b">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Vacinação Anual</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" style="margin-left: 15px;" id="service-item-c">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Exame de Sangue</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" style="margin-left: 15px;" id="service-item-d">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Limpeza de Dentes</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" style="margin-left: 15px;" id="service-item-e">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Banho e Tosa</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-                <div class="Box" style="margin-left: 15px;">
-                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="Box" style="margin-left: 15px;" id="service-item-f">
+                    <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Serviço">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do serviço</p>
+                        <p>Consulta Urgência</p>
                         <div class="excluirAndEditar">
-                            <a href="" onclick="abrirPopupAgendarService(); return false;">Agendar</a>
+                            <a href="#" onclick="abrirPopupAgendarService(this); return false;">Agendar</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div class="secondServicesBox" style="max-width: 1185px; max-height: 115px;">
+        <div class="secondServicesBox" style="max-width: 1185px; max-height: 115px;" id="scheduledServicesSection">
             <div class="wordAndButton">
                 <p>Serviços agendados</p>
             </div>
-
             <div class="horizontalAlignStraightBoxes">
-                <div class="alignStraightBoxes">
+                <div class="alignStraightBoxes" id="agendamento-exemplo-1">
                     <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="" class="img-agendamento">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Agendamento"
+                            class="img-agendamento">
+                        <span class="cancel-msg"
+                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Consulta Inicial</p>
+                                <p>Dr. House</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Pet Exemplo</p>
+                                <p>01/01/2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="agendamento-exemplo-2">
+                    <div class="straightBox">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Agendamento"
+                            class="img-agendamento">
                         <span class="cancel-msg"
                             style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
                         <div class="alignamesanddates">
@@ -140,11 +158,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="agendamento-exemplo-3">
                     <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="" class="img-agendamento">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Agendamento"
+                            class="img-agendamento">
                         <span class="cancel-msg"
                             style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
                         <div class="alignamesanddates">
@@ -158,11 +176,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="agendamento-exemplo-4">
                     <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="" class="img-agendamento">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Agendamento"
+                            class="img-agendamento">
                         <span class="cancel-msg"
                             style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
                         <div class="alignamesanddates">
@@ -176,11 +194,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="agendamento-exemplo-5">
                     <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="" class="img-agendamento">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Agendamento"
+                            class="img-agendamento">
                         <span class="cancel-msg"
                             style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
                         <div class="alignamesanddates">
@@ -194,38 +212,59 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="" class="img-agendamento">
-                        <span class="cancel-msg"
-                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
-                        <div class="alignamesanddates">
-                            <div class="nomeServicoEVeterinario">
-                                <p>Nome do serviço</p>
-                                <p>Nome do veterinário</p>
-                            </div>
-                            <div class="nomeDonoEData">
-                                <p>Nome do pet</p>
-                                <p>Data</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
             </div>
         </div>
-        <div class="secondServicesBox">
+
+        <div class="secondServicesBox" id="historyServicesSection">
             <div class="wordAndButton">
                 <p>Histórico de serviços</p>
             </div>
-
             <div class="horizontalAlignStraightBoxes">
-                <div class="alignStraightBoxes">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="alignStraightBoxes" id="hist-col-1">
+                    <div class="straightBox" id="hist-1-1">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Consulta</p>
+                                <p>Dr. Silva</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Rex</p>
+                                <p>01/02/2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox" id="hist-1-2">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Vacina Raiva</p>
+                                <p>Dra. Lima</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Mimi</p>
+                                <p>15/03/2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="straightBox" id="hist-1-3">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>Check-up</p>
+                                <p>Dr. Souza</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>PiuPiu</p>
+                                <p>20/04/2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="hist-col-2">
+                    <div class="straightBox" id="hist-2-1">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -237,8 +276,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-2-2">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -250,8 +289,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-2-3">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -264,9 +303,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="hist-col-3">
+                    <div class="straightBox" id="hist-3-1">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -278,8 +317,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-3-2">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -291,49 +330,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
-                        <div class="alignamesanddates">
-                            <div class="nomeServicoEVeterinario">
-                                <p>Nome do serviço</p>
-                                <p>Nome do veterinário</p>
-                            </div>
-                            <div class="nomeDonoEData">
-                                <p>Nome do pet</p>
-                                <p>Data</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
-                        <div class="alignamesanddates">
-                            <div class="nomeServicoEVeterinario">
-                                <p>Nome do serviço</p>
-                                <p>Nome do veterinário</p>
-                            </div>
-                            <div class="nomeDonoEData">
-                                <p>Nome do pet</p>
-                                <p>Data</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
-                        <div class="alignamesanddates">
-                            <div class="nomeServicoEVeterinario">
-                                <p>Nome do serviço</p>
-                                <p>Nome do veterinário</p>
-                            </div>
-                            <div class="nomeDonoEData">
-                                <p>Nome do pet</p>
-                                <p>Data</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-3-3">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -346,9 +344,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="hist-col-4">
+                    <div class="straightBox" id="hist-4-1">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -360,8 +358,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-4-2">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -373,8 +371,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-4-3">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -387,9 +385,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="alignStraightBoxes" style="margin-left: 10px;">
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="hist-col-5">
+                    <div class="straightBox" id="hist-5-1">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -401,8 +399,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-5-2">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -414,8 +412,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="straightBox">
-                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="">
+                    <div class="straightBox" id="hist-5-3">
+                        <img src="../IMGs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Ícone Histórico">
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Nome do serviço</p>
@@ -434,14 +432,14 @@
         <div id="popupContainer" class="popups">
             <div class="popup1">
                 <span id="popupX" onclick="fecharPopup()">X</span>
-                <form>
+                <form id="editPetForm">
                     <p>Editar pet</p>
                     <div class="alignInputsPopup">
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="Espécie">
-                        <input type="text" placeholder="Raça">
-                        <input type="text" placeholder="Data de nascimento">
-                        <input type="text" placeholder="Informações de saúde">
+                        <input type="text" placeholder="Nome" id="editPetNomeInput" required>
+                        <input type="text" placeholder="Espécie" id="editPetEspecieInput">
+                        <input type="text" placeholder="Raça" id="editPetRacaInput">
+                        <input type="text" placeholder="Data de nascimento" id="editPetNascInput">
+                        <input type="text" placeholder="Informações de saúde" id="editPetSaudeInput">
                     </div>
                     <button type="submit">Editar pet</button>
                 </form>
@@ -451,14 +449,14 @@
         <div id="popupContainerNewVet" class="popupsNewVet">
             <div class="popup2">
                 <span id="popupX2" onclick="fecharPopupNewVet()">X</span>
-                <form>
+                <form id="newPetForm">
                     <p>Novo pet</p>
                     <div class="alignInputsPopup">
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="Espécie">
-                        <input type="text" placeholder="Raça">
-                        <input type="text" placeholder="Data de nascimento">
-                        <input type="text" placeholder="Informações de saúde">
+                        <input type="text" placeholder="Nome" id="newPetNomeInput" required>
+                        <input type="text" placeholder="Espécie" id="newPetEspecieInput">
+                        <input type="text" placeholder="Raça" id="newPetRacaInput">
+                        <input type="text" placeholder="Data de nascimento" id="newPetNascInput">
+                        <input type="text" placeholder="Informações de saúde" id="newPetSaudeInput">
                     </div>
                     <button type="submit">Adicionar pet</button>
                 </form>
@@ -468,118 +466,333 @@
         <div id="popupContainerAgendarService" class="popupsAgendarService">
             <div class="popup3">
                 <span id="popupX3" onclick="fecharPopupabrirPopupAgendarService()">X</span>
-                <form>
-                    <p>Novo pet</p>
+                <form id="agendarServicoForm">
+                    <p>Agendar Serviço</p>
                     <div class="alignInputsPopup">
-                        <input type="text" placeholder="Data">
-                        <input type="text" placeholder="veterinário">
+                        <input type="text" placeholder="Data" id="agendarDataInput">
+                        <input type="text" placeholder="Veterinário" id="agendarVetInput">
                     </div>
-                    <button type="submit">Agendar pet</button>
+                    <button type="submit">Agendar Serviço</button>
                 </form>
             </div>
         </div>
-
-        <script>
-            function abrirPopup() {
-                const container = document.getElementById("popupContainer");
-                container.style.display = "flex";
-            }
-
-            function fecharPopup() {
-                const container = document.getElementById("popupContainer");
-                container.style.display = "none";
-            }
-
-            function fecharSeClicarFora(event) {
-                if (event.target.id === "popupContainer") {
-                    fecharPopup();
-                }
-            }
-
-            document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarFora);
-
-
-            function abrirPopupNewVet() {
-                const container = document.getElementById("popupContainerNewVet");
-                container.style.display = "flex";
-            }
-
-            function fecharPopupNewVet() {
-                const container = document.getElementById("popupContainerNewVet");
-                container.style.display = "none";
-            }
-
-            function fecharSeClicarForaNewVet(event) {
-                if (event.target.id === "popupContainerNewVet") {
-                    fecharPopup();
-                }
-            }
-
-            function abrirPopupAgendarService() {
-                const container = document.getElementById("popupContainerAgendarService");
-                container.style.display = "flex";
-            }
-
-            function fecharPopupabrirPopupAgendarService() {
-                const container = document.getElementById("popupContainerAgendarService");
-                container.style.display = "none";
-            }
-
-            document.getElementById("popupContainerNewVet").addEventListener("click", fecharSeClicarForaNewVet);
-
-
-            const boxes = document.querySelectorAll('.straightBox');
-
-            boxes.forEach(box => {
-                const msg = box.querySelector('.cancel-msg');
-
-                box.style.position = 'relative';
-
-                box.addEventListener('mouseenter', () => {
-                    msg.style.display = 'block';
-                });
-
-                box.addEventListener('mouseleave', () => {
-                    msg.style.display = 'none';
-                });
-            });
-
-            document.addEventListener("DOMContentLoaded", function () {
-                document.querySelectorAll('a.excluir').forEach(function (botao) {
-                    botao.addEventListener("click", function (e) {
-                        e.preventDefault();
-
-                        const elementoPai = botao.closest(".Box") || botao.closest(".borderNameVets");
-
-                        if (elementoPai && elementoPai.id) {
-                            console.log("ID do item a ser excluído:", elementoPai.id);
-                            elementoPai.remove();
-                            alert("Apagado com sucesso!");
-                        }
-                    });
-                });
-            });
-
-
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const cancelButtons = document.querySelectorAll(".cancel-msg");
-
-                cancelButtons.forEach(function (button) {
-                    button.addEventListener("click", function () {
-                        const agendamentoBox = button.closest(".alignStraightBoxes");
-
-                        if (agendamentoBox) {
-                            console.log("Removendo agendamento:", agendamentoBox.id || "(sem id)");
-                            agendamentoBox.remove();
-                            alert("Apagado com sucesso!");
-                        }
-                    });
-                });
-            });
-
-        </script>
     </section>
+
+    <script>
+        function abrirPopup() {
+            const popup = document.getElementById("popupContainer");
+            if (popup) popup.style.display = "flex";
+        }
+
+        function fecharPopup() {
+            const popup = document.getElementById("popupContainer");
+            if (popup) popup.style.display = "none";
+            const editForm = document.getElementById('editPetForm');
+            if (editForm) editForm.reset();
+            elementoEditando = null;
+        }
+
+        function abrirPopupNewVet() {
+            const popup = document.getElementById("popupContainerNewVet");
+            if (popup) popup.style.display = "flex";
+        }
+
+        function fecharPopupNewVet() {
+            const popup = document.getElementById("popupContainerNewVet");
+            if (popup) popup.style.display = "none";
+            const newForm = document.getElementById('newPetForm');
+            if (newForm) newForm.reset();
+        }
+
+        let servicoSelecionadoContext = null;
+
+        function abrirPopupAgendarService(clickedLinkElement) {
+            servicoSelecionadoContext = clickedLinkElement.closest('.Box');
+            if (!servicoSelecionadoContext) {
+                console.error("Contexto do serviço (.Box) não encontrado para o link:", clickedLinkElement);
+                return;
+            }
+
+            const serviceNameElement = servicoSelecionadoContext.querySelector('.alignServiceNameAndExcluirEditar p');
+            const serviceName = serviceNameElement ? serviceNameElement.textContent : "Serviço";
+
+            const popupTitle = document.querySelector('#popupContainerAgendarService .popup3 > p');
+            if (popupTitle) popupTitle.textContent = `Agendar: ${serviceName}`;
+
+            const popupToOpen = document.getElementById("popupContainerAgendarService");
+            if (popupToOpen) {
+                popupToOpen.style.display = "flex";
+            } else {
+                console.error("Popup #popupContainerAgendarService não encontrado.");
+            }
+        }
+
+        function fecharPopupabrirPopupAgendarService() {
+            const popup = document.getElementById("popupContainerAgendarService");
+            if (popup) popup.style.display = "none";
+            servicoSelecionadoContext = null;
+            const agendarForm = document.getElementById('agendarServicoForm');
+            if (agendarForm) agendarForm.reset();
+        }
+
+        document.querySelectorAll(".popups, .popupsNewVet, .popupsAgendarService").forEach(popup => {
+            if (popup) {
+                popup.addEventListener("click", function (event) {
+                    if (event.target === this) {
+                        if (this.id === "popupContainer") fecharPopup();
+                        else if (this.id === "popupContainerNewVet") fecharPopupNewVet();
+                        else if (this.id === "popupContainerAgendarService") fecharPopupabrirPopupAgendarService();
+                    }
+                });
+            }
+        });
+
+        function setupCancelHoverForStraightBox(straightBoxElement) {
+            const msg = straightBoxElement.querySelector('.cancel-msg');
+            if (!msg) return;
+            if (window.getComputedStyle(straightBoxElement).position === 'static') {
+                straightBoxElement.style.position = 'relative';
+            }
+            straightBoxElement.addEventListener('mouseenter', () => { msg.style.display = 'block'; });
+            straightBoxElement.addEventListener('mouseleave', () => { msg.style.display = 'none'; });
+        }
+
+        function updateAddPetButtonVisibility() {
+            const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
+            const addPetLink = document.getElementById('addNewPetButton');
+            const maxPets = 3;
+
+            if (!addPetLink) return;
+
+            if (currentPetsCount >= maxPets) {
+                addPetLink.classList.add('disabled-link');
+                addPetLink.style.pointerEvents = 'none';
+                addPetLink.setAttribute('aria-disabled', 'true');
+            } else {
+                addPetLink.classList.remove('disabled-link');
+                addPetLink.style.pointerEvents = 'auto';
+                addPetLink.removeAttribute('aria-disabled');
+            }
+        }
+
+        let elementoEditando = null;
+
+        function attachEditPetListener(linkElement) {
+            linkElement.addEventListener('click', function (e) {
+                e.preventDefault();
+                const bloco = this.closest('.borderNameVets');
+                if (!bloco) return;
+                elementoEditando = bloco;
+                const editForm = document.getElementById('editPetForm');
+                if (!editForm) return;
+                editForm.querySelector('#editPetNomeInput').value = bloco.querySelector('p').textContent;
+                editForm.querySelector('#editPetEspecieInput').value = bloco.dataset.especie || '';
+                editForm.querySelector('#editPetRacaInput').value = bloco.dataset.raca || '';
+                editForm.querySelector('#editPetNascInput').value = bloco.dataset.nascimento || '';
+                editForm.querySelector('#editPetSaudeInput').value = bloco.dataset.saude || '';
+                abrirPopup();
+            });
+        }
+
+        function attachDeletePetListener(linkElement) {
+            linkElement.addEventListener('click', function (e) {
+                e.preventDefault();
+                const petElement = this.closest('.borderNameVets');
+                if (petElement && confirm(`Tem certeza que deseja excluir o pet "${petElement.querySelector('p').textContent}"?`)) {
+                    petElement.remove();
+                    alert("Pet apagado com sucesso!");
+                    updateAddPetButtonVisibility();
+                }
+            });
+        }
+
+        const editPetFormElem = document.getElementById('editPetForm');
+        if (editPetFormElem) {
+            editPetFormElem.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (elementoEditando) {
+                    elementoEditando.querySelector('p').textContent = this.querySelector('#editPetNomeInput').value;
+                    elementoEditando.dataset.especie = this.querySelector('#editPetEspecieInput').value;
+                    elementoEditando.dataset.raca = this.querySelector('#editPetRacaInput').value;
+                    elementoEditando.dataset.nascimento = this.querySelector('#editPetNascInput').value;
+                    elementoEditando.dataset.saude = this.querySelector('#editPetSaudeInput').value;
+                    alert("Pet editado com sucesso!");
+                    fecharPopup();
+                }
+            });
+        }
+
+        const newPetFormElem = document.getElementById('newPetForm');
+        if (newPetFormElem) {
+            newPetFormElem.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
+                if (currentPetsCount >= 3) {
+                    alert("Você pode adicionar no máximo 3 pets. Remova um existente para adicionar um novo.");
+                    fecharPopupNewVet();
+                    return;
+                }
+                const nome = this.querySelector('#newPetNomeInput').value;
+                const especie = this.querySelector('#newPetEspecieInput').value;
+                const raca = this.querySelector('#newPetRacaInput').value;
+                const nasc = this.querySelector('#newPetNascInput').value;
+                const saude = this.querySelector('#newPetSaudeInput').value;
+                if (!nome.trim()) {
+                    alert("O nome do pet é obrigatório.");
+                    return;
+                }
+                const petList = document.querySelector('.alignInsideVetList');
+                const addButtonContainer = petList.querySelector('.addVetButton');
+                const newPetId = `pet-dyn-${Date.now()}`;
+                const novoDiv = document.createElement('div');
+                novoDiv.className = 'borderNameVets';
+                novoDiv.id = newPetId;
+                novoDiv.dataset.especie = especie;
+                novoDiv.dataset.raca = raca;
+                novoDiv.dataset.nascimento = nasc;
+                novoDiv.dataset.saude = saude;
+                novoDiv.innerHTML = `
+                <p>${nome}</p>
+                <div>
+                    <a href="#" class="excluir-pet">Excluir</a>
+                    <a href="#" class="editar-pet">Editar</a> 
+                </div>
+            `;
+                const newDeleteLink = novoDiv.querySelector('.excluir-pet');
+                const newEditLink = novoDiv.querySelector('.editar-pet');
+                attachDeletePetListener(newDeleteLink);
+                attachEditPetListener(newEditLink);
+                petList.insertBefore(novoDiv, addButtonContainer);
+                alert("Pet adicionado com sucesso!");
+                this.reset();
+                fecharPopupNewVet();
+                updateAddPetButtonVisibility();
+            });
+        }
+
+        const addNewPetButton = document.getElementById('addNewPetButton');
+        if (addNewPetButton) {
+            addNewPetButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
+                if (currentPetsCount >= 3 && this.style.pointerEvents === 'none') {
+                    alert("Você pode adicionar no máximo 3 pets.");
+                    return;
+                }
+                abrirPopupNewVet();
+            });
+        }
+
+        const agendarServicoFormElem = document.getElementById('agendarServicoForm');
+        if (agendarServicoFormElem) {
+            agendarServicoFormElem.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!servicoSelecionadoContext) {
+                    alert("Erro: Contexto do serviço não selecionado.");
+                    return;
+                }
+                const data = this.querySelector('#agendarDataInput').value.trim();
+                const veterinario = this.querySelector('#agendarVetInput').value.trim();
+                if (data === '') {
+                    alert("Por favor, preencha a data.");
+                    return;
+                }
+                const nomeServicoElement = servicoSelecionadoContext.querySelector('.alignServiceNameAndExcluirEditar p');
+                const nomeServico = nomeServicoElement ? nomeServicoElement.textContent : "Serviço Desconhecido";
+                const imgElement = servicoSelecionadoContext.querySelector('img');
+                const imgSrc = imgElement ? imgElement.src : "";
+                const agendamentosContainer = document.querySelector('#scheduledServicesSection .horizontalAlignStraightBoxes');
+                const agendamentoId = `agendamento-dyn-${Date.now()}`;
+                const novoAgendamentoHTML = `
+                <div class="alignStraightBoxes" style="margin-left: 10px;" id="${agendamentoId}">
+                    <div class="straightBox">
+                        <img src="${imgSrc}" alt="Ícone Agendamento" class="img-agendamento">
+                        <span class="cancel-msg"
+                            style="display: none; color: red; font-weight: bold; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <div class="alignamesanddates">
+                            <div class="nomeServicoEVeterinario">
+                                <p>${nomeServico}</p>
+                                <p>${veterinario || 'N/A'}</p>
+                            </div>
+                            <div class="nomeDonoEData">
+                                <p>Pet (a definir)</p>
+                                <p>${data}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+                if (agendamentosContainer) {
+                    agendamentosContainer.insertAdjacentHTML('beforeend', novoAgendamentoHTML);
+                    const novoAlignStraightBoxesElement = document.getElementById(agendamentoId);
+                    if (novoAlignStraightBoxesElement) {
+                        const newStraightBox = novoAlignStraightBoxesElement.querySelector('.straightBox');
+                        if (newStraightBox) {
+                            setupCancelHoverForStraightBox(newStraightBox);
+                        }
+                    }
+                }
+                this.reset();
+                fecharPopupabrirPopupAgendarService();
+                alert("Serviço agendado com sucesso!");
+            });
+        }
+
+        const mainSection = document.getElementById('mainClientSection');
+        if (mainSection) {
+            mainSection.addEventListener('click', function (event) {
+                const target = event.target;
+                if (target.classList.contains('cancel-msg')) {
+                    const alignStraightBoxesParent = target.closest(".alignStraightBoxes");
+                    if (alignStraightBoxesParent) {
+                        let confirmMessage = "Tem certeza que deseja remover este item?";
+                        const isInScheduled = target.closest('#scheduledServicesSection');
+                        if (isInScheduled) {
+                            confirmMessage = "Tem certeza que deseja cancelar este agendamento?";
+                            if (confirm(confirmMessage)) {
+                                alignStraightBoxesParent.remove();
+                                alert("Agendamento cancelado com sucesso!");
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.straightBox').forEach(setupCancelHoverForStraightBox);
+            document.querySelectorAll('.vetList .borderNameVets').forEach((petDiv, index) => {
+                let currentId = petDiv.id;
+                const defaultPetIds = ['pet-1', 'pet-2', 'pet-3'];
+                if (index < defaultPetIds.length && (!currentId || currentId.startsWith('vet-'))) {
+                    petDiv.id = defaultPetIds[index];
+                } else if (!currentId) {
+                    petDiv.id = `pet-initial-dyn-${index + 1}`;
+                }
+
+                if (petDiv.dataset.especie === undefined) petDiv.dataset.especie = "";
+                if (petDiv.dataset.raca === undefined) petDiv.dataset.raca = "";
+                if (petDiv.dataset.nascimento === undefined) petDiv.dataset.nascimento = "";
+                if (petDiv.dataset.saude === undefined) petDiv.dataset.saude = "";
+
+                const editLink = petDiv.querySelector('a.editar-pet') || petDiv.querySelector('a:not(.excluir-pet)');
+                const deleteLink = petDiv.querySelector('a.excluir-pet');
+
+                if (editLink) {
+                    editLink.removeAttribute('onclick');
+                    if (!editLink.classList.contains('editar-pet')) editLink.classList.add('editar-pet');
+                    attachEditPetListener(editLink);
+                }
+                if (deleteLink) {
+                    if (!deleteLink.classList.contains('excluir-pet')) deleteLink.classList.add('excluir-pet');
+                    attachDeletePetListener(deleteLink);
+                }
+            });
+            updateAddPetButtonVisibility();
+        });
+
+    </script>
+
 </body>
 
 </html>

@@ -628,3 +628,20 @@ body {
   font-size: 20px;
 }
 
+#addNewPetButton.disabled-link {
+    opacity: 0.6;
+    cursor: not-allowed;
+    /* Your existing styles for .addVetButton a:link will be partially overridden. */
+    /* You might want to ensure background and text color also reflect disabled state */
+    /* For example, if your .addVetButton is white with blue text: */
+    /* background-color: #f0f0f0 !important; */ /* Light grey background */
+    /* color: #aaa !important; */ /* Grey text */
+}
+
+/* Ensure specificity if needed, or use !important cautiously */
+.addVetButton a.disabled-link:link,
+.addVetButton a.disabled-link:visited {
+    /* Example of overriding default link colors when disabled */
+    color: #999999; /* Adjust to fit your design */
+    background-color: #e9e9e9; /* Adjust to fit your design */
+}
