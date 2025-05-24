@@ -100,13 +100,13 @@ body {
     font-family: Inter;
 }
 
-.alignWrittenCriarConta a:link{
+.alignWrittenCriarConta a:link {
     color: rgba(255, 255, 255, 1);
     font-size: 14px;
 
 }
 
-.alignWrittenCriarConta a:visited{
+.alignWrittenCriarConta a:visited {
     color: rgba(255, 255, 255, 1);
     font-size: 14px;
 }

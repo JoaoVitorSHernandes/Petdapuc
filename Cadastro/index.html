@@ -20,23 +20,39 @@
                 <p class="writtenLogin">Cadastro</p>
             </div>
 
-            <form class="alignInputsText">
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="Data de Nascimento">
-                <input type="text" placeholder="CPF">
-                <input type="text" placeholder="Telefone">
-                <input type="text" placeholder="Senha">
+            <form id="cadastroForm" class="alignInputsText">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="data_nascimento" placeholder="Data de Nascimento (DD/MM/AAAA)" required>
+                <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="text" name="telefone" placeholder="Telefone" required>
+                <input type="password" name="senha" placeholder="Senha" required>
             </form>
 
             <div class="alignBoxElements">
                 <div class="alignEntrarButton">
                     <div class="entrarButton">
-                        <a href="">Criar Conta</a>
+                        <a href="../Login/index.html" id="criarContaLink">Criar Conta</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const criarContaLink = document.getElementById('criarContaLink');
+            const cadastroForm = document.getElementById('cadastroForm');
+
+            if (criarContaLink && cadastroForm) {
+                criarContaLink.addEventListener('click', function (event) {
+                    if (!cadastroForm.checkValidity()) {
+                        event.preventDefault();
+                        cadastroForm.reportValidity();
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 

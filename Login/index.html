@@ -20,39 +20,98 @@
                 <p class="writtenLogin">Login</p>
             </div>
 
-            <div class="alignInputsText">
-                <input type="text" placeholder="CPF">
-                <input type="text" placeholder="Senha">
-            </div>
-
-            <div class="alignBoxElements">
-                <form class="alignInputsRadio">
-                    <div>
-                        <input type="radio" name="valorigual">
-                        <p>Administrador</p>
-                    </div>
-                    <div>
-                        <input type="radio" name="valorigual">
-                        <p>Cliente</p>
-                    </div>
-                    <div>
-                        <input type="radio" name="valorigual">
-                        <p>Usuário</p>
-                    </div>
-                </form>
-                <div class="alignWrittenCriarConta">
-                    <a href="../Cadastro/index.html">Criar Conta</a>
+            <form id="loginForm">
+                <div class="alignInputsText">
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
                 </div>
 
-                <div class="alignEntrarButton">
-                    <div class="entrarButton">
-                        <a href="../Pag_Administrador/index.html">Entrar</a>
+                <div class="alignBoxElements">
+                    <div class="alignInputsRadio">
+                        <div>
+                            <input type="radio" id="radioAdmin" name="userType" value="admin" required>
+                            <label for="radioAdmin">Administrador</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radioCliente" name="userType" value="client">
+                            <label for="radioCliente">Cliente</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radioVeterinario" name="userType" value="user">
+                            <label for="radioVeterinario">Veterinário</label>
+                        </div>
+                    </div>
+                    <div class="alignWrittenCriarConta">
+                        <a href="../Cadastro/index.html">Criar Conta</a>
+                    </div>
+
+                    <div class="alignEntrarButton">
+                        <div class="entrarButton">
+                            <a href="#" id="entrarLink">Entrar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+            const entrarLink = document.getElementById('entrarLink');
+            const cpfInput = document.getElementById('cpf');
+            const senhaInput = document.getElementById('senha');
+
+            if (entrarLink) {
+                entrarLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    if (!cpfInput.value.trim()) {
+                        cpfInput.reportValidity();
+                        return;
+                    }
+                    if (!senhaInput.value.trim()) {
+                        senhaInput.reportValidity();
+                        return;
+                    }
+
+                    const selectedUserTypeRadio = document.querySelector('input[name="userType"]:checked');
+
+                    if (!selectedUserTypeRadio) {
+                        const firstRadio = document.querySelector('input[name="userType"]');
+                        if (firstRadio) {
+                            firstRadio.reportValidity();
+                        } else {
+                            alert('Por favor, selecione um tipo de usuário.');
+                        }
+                        return;
+                    }
+
+                    if (!loginForm.checkValidity()) {
+                        loginForm.reportValidity();
+                        return;
+                    }
+
+                    const userType = selectedUserTypeRadio.value;
+                    let targetPage = '';
+
+                    if (userType === 'admin') {
+                        targetPage = '../Pag_Administrador/index.html';
+                    } else if (userType === 'client') {
+                        targetPage = '../Pag_Cliente/index.html';
+                    } else if (userType === 'user') {
+                        targetPage = '../Pag_Veterinario/index.html';
+                    }
+
+                    if (targetPage) {
+                        window.location.href = targetPage;
+                    } else {
+                        alert('Tipo de usuário desconhecido ou página de destino não configurada.');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
