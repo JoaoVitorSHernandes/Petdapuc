@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="alignCenterBox">
+        <div class="centerBox">
+            <div class="alignWrittenLogin">
+                <p class="writtenLogin">Login</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="alignInputsText">
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+
+                <div class="alignBoxElements">
+                    <div class="alignInputsRadio">
+                        <div>
+                            <input type="radio" id="radioAdmin" name="userType" value="admin" required>
+                            <label for="radioAdmin">Administrador</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radioCliente" name="userType" value="client">
+                            <label for="radioCliente">Cliente</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radioVeterinario" name="userType" value="user">
+                            <label for="radioVeterinario">Veterinário</label>
+                        </div>
+                    </div>
+                    <div class="alignWrittenCriarConta">
+                        <a href="../cadastro/index.html">Criar Conta</a>
+                    </div>
+
+                    <div class="alignEntrarButton">
+                        <div class="entrarButton">
+                            <a href="#" id="entrarLink">Entrar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+            const entrarLink = document.getElementById('entrarLink');
+            const cpfInput = document.getElementById('cpf');
+            const senhaInput = document.getElementById('senha');
+
+            if (entrarLink) {
+                entrarLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    if (!cpfInput.value.trim()) {
+                        cpfInput.reportValidity();
+                        return;
+                    }
+                    if (!senhaInput.value.trim()) {
+                        senhaInput.reportValidity();
+                        return;
+                    }
+
+                    const selectedUserTypeRadio = document.querySelector('input[name="userType"]:checked');
+
+                    if (!selectedUserTypeRadio) {
+                        const firstRadio = document.querySelector('input[name="userType"]');
+                        if (firstRadio) {
+                            firstRadio.reportValidity();
+                        } else {
+                            alert('Por favor, selecione um tipo de usuário.');
+                        }
+                        return;
+                    }
+
+                    if (!loginForm.checkValidity()) {
+                        loginForm.reportValidity();
+                        return;
+                    }
+
+                    const userType = selectedUserTypeRadio.value;
+                    let targetPage = '';
+
+                    if (userType === 'admin') {
+                        targetPage = '../pag_administrador/index.html';
+                    } else if (userType === 'client') {
+                        targetPage = '../pag_cliente/index.html';
+                    } else if (userType === 'user') {
+                        targetPage = '../pag_veterinario/index.html';
+                    }
+
+                    if (targetPage) {
+                        window.location.href = targetPage;
+                    } else {
+                        alert('Tipo de usuário desconhecido ou página de destino não configurada.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

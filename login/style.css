@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(134, 157, 197, 1);
+}
+
+.alignCenterBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerBox {
+    min-height: 400px;
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.33);
+    border-radius: 10px;
+}
+
+.alignWrittenLogin {
+    display: flex;
+    justify-content: center;
+}
+
+.writtenLogin {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.alignInputsText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 27px;
+}
+
+.alignInputsText input {
+    width: 310px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(187, 187, 187, 1);
+    border-radius: 2px;
+    font-family: Inter;
+    font-size: 14px;
+}
+
+.alignInputsText input:nth-of-type(1) {
+    text-indent: 10px;
+}
+
+.alignInputsText input:nth-of-type(2) {
+    text-indent: 10px;
+}
+
+.alignInputsRadio {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 10px 0 0 2px;
+}
+
+.alignInputsRadio div {
+    width: 91px;
+    height: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.alignInputsRadio div p {
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    font-size: 12px;
+}
+
+.alignBoxElements {
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.alignWrittenCriarConta {
+    margin-top: 20px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: Inter;
+}
+
+.alignWrittenCriarConta a:link {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+
+}
+
+.alignWrittenCriarConta a:visited {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+}
+
+.alignEntrarButton {
+    background-color: rgba(58, 138, 211, 1);
+    width: 310px;
+    height: 35px;
+    border-radius: 2px;
+    margin-top: 104px;
+}
+
+.alignEntrarButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrarButton a:link {
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.entrarButton a:visited {
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    text-decoration: none;
+    font-size: 16px;
+}
