@@ -330,6 +330,7 @@ body {
 .alignStraightBoxes {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
 }
 
 .straightBox {
@@ -460,11 +461,18 @@ body {
 
 #popupX {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX:hover {
+  color: #333;
 }
 
 /*popupVet*/
@@ -547,11 +555,18 @@ body {
 
 #popupX2 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX2:hover {
+  color: #333;
 }
 
 /*Popup Agendar Serviço*/
@@ -614,18 +629,25 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #FFFFFF;
-    margin-top: 50px;
+    margin-top: 20px;
     border: none;
     border-radius: 2px;
 }
 
 #popupX3 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX3:hover {
+  color: #333;
 }
 
 #addNewPetButton.disabled-link {

@@ -37,10 +37,10 @@
             </div>
 
             <div class="overflowBoxes">
-                <div class="Box" style="margin-left: 15px;" id="servico-inicial-1"> <img
+                <div class="Box" style="margin: 16px 0 0 0;" id="servico-inicial-1"> <img
                         src="../imgs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Nome do Serviço Inicial 1">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do Serviço Inicial 1</p>
+                        <p>Nome do Serviço</p>
                         <div class="excluirAndEditar">
                             <a href="#" class="excluir">Excluir</a>
                             <a href="#" onclick="abrirPopupEditService('servico-inicial-1'); return false;">Editar</a>
@@ -51,7 +51,7 @@
                 <div class="Box" style="margin-left: 15px;" id="servico-inicial-2"> <img
                         src="../imgs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png" alt="Nome do Serviço Inicial 2">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do Serviço Inicial 2</p>
+                        <p>Nome do Serviço</p>
                         <div class="excluirAndEditar">
                             <a href="#" class="excluir">Excluir</a>
                             <a href="#" onclick="abrirPopupEditService('servico-inicial-2'); return false;">Editar</a>
@@ -62,7 +62,7 @@
                 <div class="Box" id="servico-inicial-3"> <img src="../imgs/7f12ea1300756f144a0fb5daaf68dbfc01103a46.png"
                         alt="Nome do Serviço Inicial 3">
                     <div class="alignServiceNameAndExcluirEditar">
-                        <p>Nome do Serviço Inicial 3</p>
+                        <p>Nome do Serviço</p>
                         <div class="excluirAndEditar">
                             <a href="#" class="excluir">Excluir</a>
                             <a href="#" onclick="abrirPopupEditService('servico-inicial-3'); return false;">Editar</a>
@@ -75,7 +75,7 @@
 
         <div id="popupContainer" class="popups" style="display:none;">
             <div class="popup1">
-                <span id="popupX" onclick="fecharPopup()">X</span>
+                <span id="popupX" onclick="fecharPopupCriarServico()">X</span>
                 <form id="formNewService">
                     <p>Criar serviço</p>
                     <div class="alignInputsPopup">
@@ -304,6 +304,7 @@
                 </div>
             </div>
         </div>
+
         <div class="secondServicesBox">
             <div class="wordAndButton">
                 <p>Histórico de serviços</p>

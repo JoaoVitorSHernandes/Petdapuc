@@ -460,13 +460,19 @@ body {
 
 #popupX {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
 }
 
+#popupX:hover {
+  color: #333;
+}
 /*popupVet*/
 .popupsNewVet {
   display: none;
@@ -547,11 +553,18 @@ body {
 
 #popupX2 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX2:hover {
+  color: #333;
 }
 
 /*Edit Vet*/
@@ -630,11 +643,18 @@ body {
 
 #popupX3 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX3:hover {
+  color: #333;
 }
 
 /*Edit Service*/
@@ -713,9 +733,16 @@ body {
 
 #popupX4 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #DB3938;
-  cursor: pointer;
-  font-size: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Inter;
+}
+
+#popupX4:hover {
+  color: #333;
 }
