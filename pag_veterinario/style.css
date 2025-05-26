@@ -301,7 +301,6 @@ body {
 }
 
 .secondServicesBox {
-    margin-top: 35px;
     width: 100%;
     min-width: 423px;
     min-height: 235px;
@@ -319,6 +318,7 @@ body {
     flex-direction: row;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    gap: 10px;
 }
 
 .horizontalAlignStraightBoxes::-webkit-scrollbar {
