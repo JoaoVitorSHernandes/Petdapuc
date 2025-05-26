@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <div class="secondServicesBox" style="max-width: 1185px; max-height: 115px;" id="scheduledServicesSection">
+        <div class="secondServicesBox" style="max-height: 115px;" id="scheduledServicesSection">
             <div class="wordAndButton">
                 <p>Serviços agendados</p>
             </div>
@@ -118,7 +118,7 @@
                 <div class="alignStraightBoxes" style="margin-left: 0;" id="agendamento-exemplo-1">
                     <div class="straightBox">
                         <img src="../imgs/banho.png" alt="Ícone Agendamento" class="img-agendamento">
-                        <span class="cancel-msg" style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <span class="cancel-msg" style="display: none; color: red; font-size: 12px; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Banho</p>
@@ -134,7 +134,7 @@
                 <div class="alignStraightBoxes" id="agendamento-exemplo-2">
                     <div class="straightBox">
                         <img src="../imgs/tosa.jpeg" alt="Ícone Agendamento" class="img-agendamento">
-                        <span class="cancel-msg" style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <span class="cancel-msg" style="display: none; color: red; font-size: 12px; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Tosa</p>
@@ -150,7 +150,7 @@
                 <div class="alignStraightBoxes" id="agendamento-exemplo-3">
                     <div class="straightBox">
                         <img src="../imgs/vacina.png" alt="Ícone Agendamento" class="img-agendamento">
-                        <span class="cancel-msg" style="display: none; color: red; font-weight: 500;font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <span class="cancel-msg" style="display: none; color: red; font-size: 12px; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Vacina</p>
@@ -166,7 +166,7 @@
                 <div class="alignStraightBoxes" id="agendamento-exemplo-4">
                     <div class="straightBox">
                         <img src="../imgs/lazer.png" alt="Ícone Agendamento" class="img-agendamento">
-                        <span class="cancel-msg" style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <span class="cancel-msg" style="display: none; color: red; font-size: 12px; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Lazer</p>
@@ -182,7 +182,7 @@
                 <div class="alignStraightBoxes" id="agendamento-exemplo-5">
                     <div class="straightBox">
                         <img src="../imgs/adestramento.png" alt="Ícone Agendamento" class="img-agendamento">
-                        <span class="cancel-msg" style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                        <span class="cancel-msg" style="display: none; color: red; font-size: 12px; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>Adestramento</p>
@@ -625,21 +625,12 @@
         }
 
         function updateAddPetButtonVisibility() {
-            const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
             const addPetLink = document.getElementById('addNewPetButton');
-            const maxPets = 3;
-
             if (!addPetLink) return;
-
-            if (currentPetsCount >= maxPets) {
-                addPetLink.classList.add('disabled-link');
-                addPetLink.style.pointerEvents = 'none';
-                addPetLink.setAttribute('aria-disabled', 'true');
-            } else {
-                addPetLink.classList.remove('disabled-link');
-                addPetLink.style.pointerEvents = 'auto';
-                addPetLink.removeAttribute('aria-disabled');
-            }
+            
+            addPetLink.classList.remove('disabled-link');
+            addPetLink.style.pointerEvents = 'auto';
+            addPetLink.removeAttribute('aria-disabled');
         }
 
         let elementoEditando = null;
@@ -667,7 +658,6 @@
                 const petElement = this.closest('.borderNameVets');
                 if (petElement && confirm(`Tem certeza que deseja excluir o pet "${petElement.querySelector('p').textContent}"?`)) {
                     petElement.remove();
-                    alert("Pet apagado com sucesso!");
                     updateAddPetButtonVisibility();
                     populatePetSelect(); // Re-populate pet select after deletion
                 }
@@ -684,7 +674,6 @@
                     elementoEditando.dataset.raca = this.querySelector('#editPetRacaInput').value;
                     elementoEditando.dataset.nascimento = this.querySelector('#editPetNascInput').value;
                     elementoEditando.dataset.saude = this.querySelector('#editPetSaudeInput').value;
-                    alert("Pet editado com sucesso!");
                     fecharPopup();
                     populatePetSelect(); // Re-populate pet select after edit
                 }
@@ -695,12 +684,6 @@
         if (newPetFormElem) {
             newPetFormElem.addEventListener('submit', function (e) {
                 e.preventDefault();
-                const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
-                if (currentPetsCount >= 3) {
-                    alert("Você pode adicionar no máximo 3 pets. Remova um existente para adicionar um novo.");
-                    fecharPopupNewVet();
-                    return;
-                }
                 const nome = this.querySelector('#newPetNomeInput').value;
                 const especie = this.querySelector('#newPetEspecieInput').value;
                 const raca = this.querySelector('#newPetRacaInput').value;
@@ -732,11 +715,10 @@
                 attachDeletePetListener(newDeleteLink);
                 attachEditPetListener(newEditLink);
                 petList.insertBefore(novoDiv, addButtonContainer);
-                alert("Pet adicionado com sucesso!");
                 this.reset();
                 fecharPopupNewVet();
                 updateAddPetButtonVisibility();
-                populatePetSelect(); // Re-populate pet select after a new pet is added
+                populatePetSelect();
             });
         }
 
@@ -744,11 +726,6 @@
         if (addNewPetButton) {
             addNewPetButton.addEventListener('click', function (e) {
                 e.preventDefault();
-                const currentPetsCount = document.querySelectorAll('.vetList .borderNameVets').length;
-                if (currentPetsCount >= 3 && this.style.pointerEvents === 'none') {
-                    alert("Você pode adicionar no máximo 3 pets.");
-                    return;
-                }
                 abrirPopupNewVet();
             });
         }
@@ -795,7 +772,7 @@
                     <div class="straightBox">
                         <img src="${imgSrc}" alt="Ícone Agendamento" class="img-agendamento">
                         <span class="cancel-msg"
-                            style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">cancelar</span>
+                            style="display: none; color: red; font-weight: 500; font-family: Inter; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; cursor: pointer;">Cancelar</span>
                         <div class="alignamesanddates">
                             <div class="nomeServicoEVeterinario">
                                 <p>${nomeServico}</p>

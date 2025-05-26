@@ -25,6 +25,13 @@
         <div class="vetList">
             <div class="alignInsideVetList">
                 <p>Veterinários</p>
+                <div class="borderNameVets" id="vet-padrao-1" data-dob="15/05/1985" data-cpf="123.456.789-00" data-phone="(31) 98765-4321">
+                    <p>Dr. João Silva</p>
+                    <div>
+                        <a href="#" class="excluir" style="text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #DB3938;">Excluir</a>
+                        <a href="#" onclick="abrirPopupEditVet('vet-padrao-1'); return false;" style="text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #3A8AD3; margin-left: 16px;">Editar</a>
+                    </div>
+                </div>
                 <div class="addVetButton">
                     <a href="#" onclick="return abrirPopupNewVet();">Adicionar Veterinário</a>
                 </div>
@@ -566,7 +573,7 @@
                         <input type="text" placeholder="Data de nascimento" id="newVetDobInput">
                         <input type="text" placeholder="CPF" id="newVetCpfInput">
                         <input type="text" placeholder="Telefone" id="newVetPhoneInput">
-                        <input type="text" placeholder="Senha" id="newVetPasswordInput">
+                        <input type="password" placeholder="Senha" id="newVetPasswordInput">
                     </div>
                     <button type="submit">Adicionar</button>
                 </form>
@@ -653,21 +660,14 @@
                 if (!vetListContainer) { return; }
                 const addVetMainButtonLink = vetListContainer.querySelector('.addVetButton a');
                 if (!addVetMainButtonLink) { return; }
-                const vetCount = vetListContainer.querySelectorAll('.borderNameVets').length;
-                addVetMainButtonLink.style.pointerEvents = (vetCount >= 3) ? 'none' : 'auto';
-                addVetMainButtonLink.style.opacity = (vetCount >= 3) ? '0.5' : '1';
+                addVetMainButtonLink.style.pointerEvents = 'auto';
+                addVetMainButtonLink.style.opacity = '1';
             }
 
             function abrirPopupNewVet() {
                 const vetListContainer = document.querySelector('.alignInsideVetList');
                 if (!vetListContainer) {
                     console.error("POPUP_VET_NEW: Contêiner .alignInsideVetList não encontrado.");
-                    return false;
-                }
-                const existingVets = vetListContainer.querySelectorAll('.borderNameVets');
-                if (existingVets.length >= 3) {
-                    alert("Você pode adicionar no máximo 3 veterinários.");
-                    updateAddVetButtonState();
                     return false;
                 }
                 const container = document.getElementById("popupContainerNewVet");
@@ -838,47 +838,57 @@
                                 console.error("VET_ADD_SUBMIT: .alignInsideVetList ou .addVetButton não encontrado.");
                                 if (submitButton) submitButton.disabled = false; return;
                             }
-                            const existingVets = vetListContainer.querySelectorAll('.borderNameVets');
-                            if (existingVets.length < 3) {
-                                const vetNameInput = document.getElementById('newVetNameInput');
-                                let newVetName = vetNameInput ? vetNameInput.value.trim() : `Veterinário ${existingVets.length + 1}`;
-                                if (vetNameInput && !vetNameInput.value.trim()) {
-                                    alert("Por favor, insira o nome do veterinário."); vetNameInput.focus();
-                                    if (submitButton) submitButton.disabled = false; return;
-                                }
-                                const vetDobInput = document.getElementById('newVetDobInput');
-                                const vetCpfInput = document.getElementById('newVetCpfInput');
-                                const vetPhoneInput = document.getElementById('newVetPhoneInput');
-                                const newVetDob = vetDobInput ? vetDobInput.value.trim() : '';
-                                const newVetCpf = vetCpfInput ? vetCpfInput.value.trim() : '';
-                                const newVetPhone = vetPhoneInput ? vetPhoneInput.value.trim() : '';
-                                const newVetId = `vet-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
 
-                                const newVetDiv = document.createElement('div');
-                                newVetDiv.className = 'borderNameVets'; newVetDiv.id = newVetId;
-                                if (newVetDob) newVetDiv.dataset.dob = newVetDob;
-                                if (newVetCpf) newVetDiv.dataset.cpf = newVetCpf;
-                                if (newVetPhone) newVetDiv.dataset.phone = newVetPhone;
-
-                                const nameParagraph = document.createElement('p'); nameParagraph.textContent = newVetName;
-                                const actionsDiv = document.createElement('div');
-                                const deleteLink = document.createElement('a');
-                                deleteLink.href = "#"; deleteLink.className = 'excluir'; deleteLink.textContent = 'Excluir';
-                                deleteLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #DB3938;";
-                                deleteLink.addEventListener('click', function (e) { e.preventDefault(); newVetDiv.remove(); updateAddVetButtonState(); });
-                                const editLink = document.createElement('a');
-                                editLink.href = "#"; editLink.textContent = 'Editar';
-                                editLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #3A8AD3; margin-left: 16px;";
-                                editLink.onclick = function (e) { e.preventDefault(); abrirPopupEditVet(newVetId); return false; };
-
-                                actionsDiv.appendChild(deleteLink); actionsDiv.appendChild(editLink);
-                                newVetDiv.appendChild(nameParagraph); newVetDiv.appendChild(actionsDiv);
-                                vetListContainer.insertBefore(newVetDiv, addVetButtonElement);
-                                fecharPopupNewVet(); updateAddVetButtonState();
-                                console.log(`VET_ADD_SUBMIT: Vet ${newVetId} ADICIONADO.`);
-                            } else {
-                                alert("Limite de veterinários atingido."); fecharPopupNewVet(); updateAddVetButtonState();
+                            const vetNameInput = document.getElementById('newVetNameInput');
+                            let newVetName = vetNameInput ? vetNameInput.value.trim() : `Veterinário ${Date.now()}`;
+                            if (vetNameInput && !vetNameInput.value.trim()) {
+                                alert("Por favor, insira o nome do veterinário."); vetNameInput.focus();
+                                if (submitButton) submitButton.disabled = false; return;
                             }
+                            const vetDobInput = document.getElementById('newVetDobInput');
+                            const vetCpfInput = document.getElementById('newVetCpfInput');
+                            const vetPhoneInput = document.getElementById('newVetPhoneInput');
+                            const newVetDob = vetDobInput ? vetDobInput.value.trim() : '';
+                            const newVetCpf = vetCpfInput ? vetCpfInput.value.trim() : '';
+                            const newVetPhone = vetPhoneInput ? vetPhoneInput.value.trim() : '';
+                            const newVetId = `vet-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+
+                            const newVetDiv = document.createElement('div');
+                            newVetDiv.className = 'borderNameVets'; newVetDiv.id = newVetId;
+                            if (newVetDob) newVetDiv.dataset.dob = newVetDob;
+                            if (newVetCpf) newVetDiv.dataset.cpf = newVetCpf;
+                            if (newVetPhone) newVetDiv.dataset.phone = newVetPhone;
+
+                            const nameParagraph = document.createElement('p'); nameParagraph.textContent = newVetName;
+                            const actionsDiv = document.createElement('div');
+                            const deleteLink = document.createElement('a');
+                            deleteLink.href = "#"; deleteLink.className = 'excluir'; deleteLink.textContent = 'Excluir';
+                            deleteLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #DB3938;";
+                            deleteLink.addEventListener('click', function (e) { 
+                                e.preventDefault(); 
+                                const elementName = newVetName;
+                                console.log(`CONFIRMAÇÃO DE EXCLUSÃO: Deseja realmente excluir o veterinário "${elementName}"?`);
+                                
+                                const confirmacao = confirm(`Deseja realmente excluir o veterinário "${elementName}"?`);
+                                
+                                if (confirmacao) {
+                                    console.log(`EXCLUSÃO CONFIRMADA: Veterinário "${elementName}" será removido.`);
+                                    newVetDiv.remove(); 
+                                    updateAddVetButtonState(); 
+                                } else {
+                                    console.log(`EXCLUSÃO CANCELADA: Veterinário "${elementName}" não será removido.`);
+                                }
+                            });
+                            const editLink = document.createElement('a');
+                            editLink.href = "#"; editLink.textContent = 'Editar';
+                            editLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #3A8AD3; margin-left: 16px;";
+                            editLink.onclick = function (e) { e.preventDefault(); abrirPopupEditVet(newVetId); return false; };
+
+                            actionsDiv.appendChild(deleteLink); actionsDiv.appendChild(editLink);
+                            newVetDiv.appendChild(nameParagraph); newVetDiv.appendChild(actionsDiv);
+                            vetListContainer.insertBefore(newVetDiv, addVetButtonElement);
+                            fecharPopupNewVet(); updateAddVetButtonState();
+                            console.log(`VET_ADD_SUBMIT: Vet ${newVetId} ADICIONADO.`);
                         });
                         formNewVet.setAttribute('data-listener-attached', 'true');
                         console.log("SCRIPT: Listener de SUBMIT para #formNewVet ADICIONADO.");
@@ -967,7 +977,20 @@
                             const deleteLink = document.createElement('a');
                             deleteLink.href = "#"; deleteLink.className = 'excluir'; deleteLink.textContent = 'Excluir';
                             deleteLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #DB3938;";
-                            deleteLink.addEventListener('click', function (e) { e.preventDefault(); newServiceBox.remove(); });
+                            deleteLink.addEventListener('click', function (e) { 
+                                e.preventDefault(); 
+                                const elementName = serviceName;
+                                console.log(`CONFIRMAÇÃO DE EXCLUSÃO: Deseja realmente excluir o serviço "${elementName}"?`);
+                                
+                                const confirmacao = confirm(`Deseja realmente excluir o serviço "${elementName}"?`);
+                                
+                                if (confirmacao) {
+                                    console.log(`EXCLUSÃO CONFIRMADA: Serviço "${elementName}" será removido.`);
+                                    newServiceBox.remove(); 
+                                } else {
+                                    console.log(`EXCLUSÃO CANCELADA: Serviço "${elementName}" não será removido.`);
+                                }
+                            });
                             const editLink = document.createElement('a');
                             editLink.href = "#"; editLink.textContent = 'Editar';
                             editLink.style.cssText = "text-decoration: none; font-size: 11px; font-family: Inter; font-weight: 500; color: #3A8AD3; margin-left: 16px;";
@@ -1041,9 +1064,20 @@
                     if (parentElement && !button.hasAttribute('data-static-delete-listener')) {
                         button.addEventListener('click', function (e) {
                             e.preventDefault();
-                            console.log(`STATIC_DELETE: Clicado para remover ${parentElement.id}`);
-                            parentElement.remove();
-                            if (updateStateFunction) updateStateFunction();
+                            const elementType = closestSelector === '.borderNameVets' ? 'veterinário' : 'serviço';
+                            const elementName = parentElement.querySelector('p')?.textContent || 'sem nome';
+                            
+                            console.log(`CONFIRMAÇÃO DE EXCLUSÃO: Deseja realmente excluir o ${elementType} "${elementName}"?`);
+                            
+                            const confirmacao = confirm(`Deseja realmente excluir o ${elementType} "${elementName}"?`);
+                            
+                            if (confirmacao) {
+                                console.log(`EXCLUSÃO CONFIRMADA: ${elementType} "${elementName}" será removido.`);
+                                parentElement.remove();
+                                if (updateStateFunction) updateStateFunction();
+                            } else {
+                                console.log(`EXCLUSÃO CANCELADA: ${elementType} "${elementName}" não será removido.`);
+                            }
                         });
                         button.setAttribute('data-static-delete-listener', 'true');
                     }
