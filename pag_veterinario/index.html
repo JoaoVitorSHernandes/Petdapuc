@@ -29,6 +29,7 @@
         <div class="secondServicesBox" id="scheduledAppointmentsContainer">
             <div class="wordAndButton">
                 <p>Serviços agendados para essa semana</p>
+                <a href="#" onclick="return abrirPopupAgendarServico();">Agendar Serviço</a>
             </div>
 
             <div class="horizontalAlignStraightBoxes">
@@ -544,6 +545,29 @@
             </div>
         </div>
 
+        <div id="popupAgendarServico" class="popups">
+            <div class="popup-content-service">
+                <span class="popup-close-service" onclick="fecharPopupAgendarServico()">X</span>
+                <p id="serviceStatusPopupTitle">Agendar Serviço</p>
+                <form id="formAgendarServico">
+                    <div class="alignInputsPopup">
+                        <input type="text" placeholder="Nome do cliente" id="nomeClienteInput" required>
+                        <input type="text" placeholder="Nome do pet" id="nomePetInput" required>
+                        <select id="servicoSelect" required>
+                            <option value="">Selecione o serviço</option>
+                            <option value="banho">Banho</option>
+                            <option value="tosa">Tosa</option>
+                            <option value="vacina">Vacina</option>
+                            <option value="adestramento">Adestramento</option>
+                        </select>
+                        <input type="text" placeholder="Data (DD/MM/AAAA)" id="dataInput" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" title="Formato: DD/MM/AAAA" required>
+                        <input type="text" placeholder="Horário (00:00)" id="horarioInput" pattern="^([01]?[0-9]|2[0-3]):[0-5][0-9]$" title="Formato: 00:00 (24h)" required>
+                    </div>
+                    <button type="submit" class="popup-service-save-button">Agendar</button>
+                </form>
+            </div>
+        </div>
+
         <script>
             let boxSelecionado = null;
 
@@ -669,6 +693,25 @@
                 targetHistoryColumn.appendChild(boxSelecionado);
             }
 
+            function abrirPopupAgendarServico() {
+                const container = document.getElementById("popupAgendarServico");
+                if (container) {
+                    container.style.display = "flex";
+                    const form = container.querySelector('#formAgendarServico');
+                    if (form) {
+                        form.reset();
+                    }
+                }
+                return false;
+            }
+
+            function fecharPopupAgendarServico() {
+                const container = document.getElementById("popupAgendarServico");
+                if (container) {
+                    container.style.display = "none";
+                }
+            }
+
             document.addEventListener("DOMContentLoaded", function () {
                 const scheduledContainer = document.getElementById("scheduledAppointmentsContainer");
                 if (scheduledContainer) {
@@ -712,6 +755,112 @@
                         } else if (!boxSelecionado) {
                             alert("Nenhum serviço foi selecionado. Por favor, feche este popup e selecione um serviço da lista.");
                         }
+                    });
+                }
+
+                const formAgendarServico = document.getElementById('formAgendarServico');
+                if (formAgendarServico) {
+                    formAgendarServico.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        
+                        const nomeCliente = document.getElementById('nomeClienteInput').value;
+                        const nomePet = document.getElementById('nomePetInput').value;
+                        const servico = document.getElementById('servicoSelect').value;
+                        const data = document.getElementById('dataInput').value;
+                        const horario = document.getElementById('horarioInput').value;
+
+                        const scheduledContainer = document.getElementById("scheduledAppointmentsContainer");
+                        const horizontalAlign = scheduledContainer.querySelector(".horizontalAlignStraightBoxes");
+                        
+                        let targetColumn = null;
+                        const columns = horizontalAlign.querySelectorAll(".alignStraightBoxes");
+                        
+                        for (const col of columns) {
+                            if (col.children.length < 3) {
+                                targetColumn = col;
+                                break;
+                            }
+                        }
+
+                        if (!targetColumn) {
+                            targetColumn = document.createElement("div");
+                            targetColumn.className = "alignStraightBoxes";
+                            if (columns.length > 0) {
+                                targetColumn.style.marginLeft = "10px";
+                            }
+                            horizontalAlign.appendChild(targetColumn);
+                        }
+
+                        const newServiceBox = document.createElement("div");
+                        newServiceBox.className = "straightBox";
+                        
+                        const img = document.createElement("img");
+                        img.src = `../imgs/${servico}.png`;
+                        img.alt = servico.charAt(0).toUpperCase() + servico.slice(1);
+                        
+                        const alignamesanddates = document.createElement("div");
+                        alignamesanddates.className = "alignamesanddates";
+                        
+                        const nomeServicoEVeterinario = document.createElement("div");
+                        nomeServicoEVeterinario.className = "nomeServicoEVeterinario";
+                        
+                        const servicoP = document.createElement("p");
+                        servicoP.textContent = servico.charAt(0).toUpperCase() + servico.slice(1);
+                        
+                        const petP = document.createElement("p");
+                        petP.textContent = nomePet;
+                        
+                        nomeServicoEVeterinario.appendChild(servicoP);
+                        nomeServicoEVeterinario.appendChild(petP);
+                        
+                        const nomeDonoEData = document.createElement("div");
+                        nomeDonoEData.className = "nomeDonoEData";
+                        
+                        const clienteP = document.createElement("p");
+                        clienteP.textContent = nomeCliente;
+                        
+                        const dataP = document.createElement("p");
+                        dataP.textContent = `${data} - ${horario}`;
+                        
+                        nomeDonoEData.appendChild(clienteP);
+                        nomeDonoEData.appendChild(dataP);
+                        
+                        alignamesanddates.appendChild(nomeServicoEVeterinario);
+                        alignamesanddates.appendChild(nomeDonoEData);
+                        
+                        newServiceBox.appendChild(img);
+                        newServiceBox.appendChild(alignamesanddates);
+                        
+                        targetColumn.appendChild(newServiceBox);
+                        
+                        fecharPopupAgendarServico();
+                        alert("Serviço agendado com sucesso!");
+                    });
+                }
+
+                // Formatação automática dos campos de data e horário
+                const dataInput = document.getElementById('dataInput');
+                const horarioInput = document.getElementById('horarioInput');
+
+                if (dataInput) {
+                    dataInput.addEventListener('input', function(e) {
+                        let value = e.target.value.replace(/\D/g, '');
+                        if (value.length > 2 && value.length <= 4) {
+                            value = value.slice(0,2) + '/' + value.slice(2);
+                        } else if (value.length > 4) {
+                            value = value.slice(0,2) + '/' + value.slice(2,4) + '/' + value.slice(4,8);
+                        }
+                        e.target.value = value;
+                    });
+                }
+
+                if (horarioInput) {
+                    horarioInput.addEventListener('input', function(e) {
+                        let value = e.target.value.replace(/\D/g, '');
+                        if (value.length > 2) {
+                            value = value.slice(0,2) + ':' + value.slice(2,4);
+                        }
+                        e.target.value = value;
                     });
                 }
             });

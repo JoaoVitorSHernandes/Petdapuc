@@ -380,7 +380,7 @@ body {
 .nomeDonoEData {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .nomeDonoEData p{
@@ -388,6 +388,10 @@ body {
     font-weight: 500;
     font-size: 11px;
     color: #869DC5;
+}
+
+.nomeDonoEData p:last-child {
+    margin-top: 2px;
 }
 
 /*popup*/
@@ -495,7 +499,7 @@ body {
 .popup2 {
   background-color: #FFFFFF;
   width: 350px;
-  height: 430px;
+  height: 460px;
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -536,6 +540,22 @@ body {
     margin-top: 10px;
 }
 
+.horarioInputs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 310px;
+}
+
+.horarioInputs input {
+    width: 150px !important;
+    margin-top: 0 !important;
+}
+
+.horarioInputs input:invalid {
+    border-color: #DB3938;
+}
+
 .popup2 form p{
     font-family: Inter;
     font-size: 32px;
@@ -551,7 +571,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #FFFFFF;
-    margin-top: 50px;
+    margin-top: 25px;
     border: none;
     border-radius: 2px;
 }
@@ -641,7 +661,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #FFFFFF;
-    margin-top: 90px;
+    margin-top: 40px;
     border: none;
     border-radius: 2px;
 }

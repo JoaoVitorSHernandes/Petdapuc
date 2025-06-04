@@ -380,7 +380,7 @@ body {
 .nomeDonoEData {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .nomeDonoEData p{
@@ -388,6 +388,10 @@ body {
     font-weight: 500;
     font-size: 11px;
     color: #869DC5;
+}
+
+.nomeDonoEData p:last-child {
+    margin-top: 2px;
 }
 
 /*popup*/
@@ -591,7 +595,7 @@ body {
 .popup3 {
   background-color: #FFFFFF;
   width: 350px;
-  height: 300px;
+  height: 355px;
   padding: 20px;
   border-radius: 10px;
   position: relative;
